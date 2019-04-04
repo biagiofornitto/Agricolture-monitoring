@@ -1,0 +1,54 @@
+@(userForm: Form[UserData])(implicit messages: Messages)
+@main("Control Panel Sensors") {
+<h1>Control Panel Sensors</h1>
+<br>
+<h2>Temperature</h2>
+
+
+<ul>
+  <li><a href="/api/temp/on">ON</a></li>
+  <li><a href="/api/temp/off">OFF</a></li>
+  <li><a href="/api/temp/read">READ</a></li>
+</ul>
+
+<form action="/api/temp/setSensors" method="post">
+  @helper.inputText(userForm("numberSensors"))
+  <input type="submit" value="Send" >
+</form>
+
+<br>
+<h2>Brightness</h2>
+
+
+<ul>
+  <li><a href="/api/bright/on">ON</a></li>
+  <li><a href="/api/bright/off">OFF</a></li>
+  <li><a href="/api/bright/read">READ</a></li>
+</ul>
+
+<form action="/api/bright/setSensors" method="post">
+  @helper.inputText(userForm("numberSensors"))
+  <input type="submit" value="Send" >
+</form>
+
+
+<br>
+<h2>Umidity</h2>
+
+
+<ul>
+  <li><a href="/api/umi/on">ON</a></li>
+  <li><a href="/api/umi/off">OFF</a></li>
+  <li><a href="/api/umi/read">READ</a></li>
+</ul>
+
+<form action="/api/umi/setSensors" method="post">
+
+  @helper.inputText(userForm("numberSensors"))
+  <input type="submit" value="Send">
+
+</form>
+
+<br>
+}
+
